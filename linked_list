@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+struct node {
+    int key;
+    int data;
+    struct node *next;
+};
+
+struct node *head = NULL;
+struct node *current = NULL;
+
+void print_list(int key, int data) {
+    
+}
+
+void list_length(int key, int data) {
+    
+}
+
+void insert_first(int key, int data) {
+    // Reserve memory
+    struct node *new_node = (struct node*)(sizeof(struct node));
+    // Fill data
+    new_node->key = key;
+    new_node->data = data;
+    //Connect
+    new_node->next = head;
+    head = new_node;
+}
+
+void insert_last(int key, int data) {
+    
+}
+
+void insert_middle(int key, int data) {
+    
+}
+
+void delete_node(){
+    
+}
+
+void search(){
+    
+}
+
+void exit(){
+    
+}
+
+int main()
+{
+    int ch;
+    
+    printf("1-Print List\n");
+    
+    printf("2-Print List Length\n");
+    
+    printf("3-Insert First\n");
+    
+    printf("4-Insert Last\n");
+    
+    printf("5-Insert Middle\n");
+    
+    printf("6-Delete\n");
+    
+    printf("7-Search\n");
+    
+    printf("8-Exit\n");
+    
+    printf("\nEnter Choice:");
+    scanf("%d", &ch);
+    
+    /*if(ch == 1) {
+        print_list();
+    } else if (ch == 2) {
+        list_length();
+    } else if (ch == 3) {
+        insert_first();
+    } else if (ch == 4) {
+        insert_last();
+    } else if (ch == 5) {
+        insert_middle();
+    } else if (ch == 6) {
+        delete_node();
+    } else if (ch == 7) {
+        search();
+    } else if (ch == 8) {
+        exit();
+    }*/
+
+    return 0;
+}
