@@ -1,93 +1,93 @@
-#include <stdio.h>
-
-struct node {
-    int key;
-    int data;
-    struct node *next;
-};
-
-struct node *head = NULL;
-struct node *current = NULL;
-
-void print_list(int key, int data) {
-    
-}
-
-void list_length(int key, int data) {
-    
-}
-
-void insert_first(int key, int data) {
-    // Reserve memory
-    struct node *new_node = (struct node*)(sizeof(struct node));
-    // Fill data
-    new_node->key = key;
-    new_node->data = data;
-    //Connect
-    new_node->next = head;
-    head = new_node;
-}
-
-void insert_last(int key, int data) {
-    
-}
-
-void insert_middle(int key, int data) {
-    
-}
-
-void delete_node(){
-    
-}
-
-void search(){
-    
-}
-
-void exit(){
-    
-}
-
-int main()
+#include <iostream>
+using namespace std;
+struct Node
 {
-    int ch;
-    
-    printf("1-Print List\n");
-    
-    printf("2-Print List Length\n");
-    
-    printf("3-Insert First\n");
-    
-    printf("4-Insert Last\n");
-    
-    printf("5-Insert Middle\n");
-    
-    printf("6-Delete\n");
-    
-    printf("7-Search\n");
-    
-    printf("8-Exit\n");
-    
-    printf("\nEnter Choice:");
-    scanf("%d", &ch);
-    
-    /*if(ch == 1) {
-        print_list();
-    } else if (ch == 2) {
-        list_length();
-    } else if (ch == 3) {
-        insert_first();
-    } else if (ch == 4) {
-        insert_last();
-    } else if (ch == 5) {
-        insert_middle();
-    } else if (ch == 6) {
-        delete_node();
-    } else if (ch == 7) {
-        search();
-    } else if (ch == 8) {
-        exit();
-    }*/
+ int key;
+ int data;
+ Node *next;
+};
+Node *head = nullptr;
+Node *current = nullptr;
+void insert_first (int key, int data) {
+// Reserve memory
+ Node *new_node = new Node;
+// Fill data
+ new_node->key = key;
+ new_node->data = data;
+// Connect
+ new_node->next = head;
+ head = new_node;
+}
+void print_list () {
+ Node *ptr = head;
+ while (ptr != nullptr)
+ {
+ cout << "key:" << ptr->key << "data:" << ptr->data << endl;
+ ptr = ptr->next;
+ }
+}
+void print_length () {
+ int length = 0;
+ Node *ptr = head;
+ while (ptr != nullptr)
+ {
+ length++;
+ ptr = ptr->next;
+ }
+ cout << "Length is " << length << endl;
+}
+void insert_last (int key, int data) {
+}
+void insert_middle (int key, int data) {
+}
+void delete_node (int key) {
+}
+void search (int data) {
+}
+int main () {
+ int ch = 0;
+ while (ch != 6) {
+ int k, d;
+ cout << "1- Print list\n";
+ cout << "2- Print list length\n";
+ cout << "3- Insert\n";
+ cout << "4- Delete\n";
+ cout << "5- Search\n";
+ cout << "6- Exit\n";
+ cout << "\nYour choice: ";
+ cin >> ch;
 
-    return 0;
+ if (ch == 1) {
+ print_list ();
+ } else if (ch == 2) {
+ print_length ();
+ } else if (ch == 3) {
+ int ch2 = 0;
+ cout << "1- Insert first\n";
+ cout << "2- Insert last\n";
+ cout << "3- Insert middle\n";
+ cout << "\nYour choice: ";
+ cin >> ch2;
+ cout << "\nEnter key:";
+ cin >> k;
+ cout << "\nEnter data:";
+ cin >> d;
+ if (ch2 == 1) {
+ insert_first (k, d);
+ } else if (ch2 == 2) {
+ insert_last (k, d);
+ } else if (ch2 == 3) {
+ insert_middle (k, d);
+ }
+ } else if (ch == 4) {
+ cout << "\nEnter key:";
+ cin >> k;
+ delete_node (k);
+ } else if (ch == 5) {
+ cout << "\nEnter data:";
+ cin >> d;
+ search (d);
+ }
+ }
+ return 0;
 }
