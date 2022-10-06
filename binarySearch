@@ -1,0 +1,23 @@
+int binarySearch(List, key, l)
+int first = 0;
+int last = l - 1;
+int mid;
+Goal found = false;
+
+int main()
+{
+    while(first <= last && !found){
+        mid = first + (last-first)/2;
+        if(List[mid] == key){
+            found = true;
+        }else if(List[mid] > key){
+            last = mid - 1;
+        }else
+            first = mid + 1;
+            
+        if(found){
+            return mid;   
+        }else
+            return -1;
+    }
+}
